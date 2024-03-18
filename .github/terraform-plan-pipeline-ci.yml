@@ -10,11 +10,11 @@ env:
   TF_WORKSPACE: "${{ secrets.TF_WORKSPACE }}"
   CONFIG_DIRECTORY: "./"
   TF_VAR_CLOUD_REGION: "${{secrets.CLOUD_REGION}}"
-  MYSQL_USER: "${{secrets.MYSQL_USER}}"
-  MYSQL_PASSWORD: "${{secrets.MYSQL_PASSWORD}}"
-  MYSQL_DATABASE: "${{secrets.MYSQL_DATABASE}}"
-  CLOUD_INSTANCE: "${{secrets.CLOUD_INSTANCE}}"
-  CREDENTIALS: "${{secrets.CREDENTIALS}}"
+  TF_VAR_MYSQL_USER: "${{secrets.MYSQL_USER}}"
+  TF_VAR_MYSQL_PASSWORD: "${{secrets.MYSQL_PASSWORD}}"
+  TF_VAR_MYSQL_DATABASE: "${{secrets.MYSQL_DATABASE}}"
+  TF_VAR_CLOUD_INSTANCE: "${{secrets.CLOUD_INSTANCE}}"
+  TF_VAR_CREDENTIALS: "${{secrets.CREDENTIALS}}"
 
 jobs:
   terraform:
