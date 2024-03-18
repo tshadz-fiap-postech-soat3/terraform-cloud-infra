@@ -18,10 +18,6 @@ variable "MYSQL_ROOT_PASSWORD" {
   description = "DB Password"
 }
 
-variable "MYSQL_ROOT_USER" {
-  default = "root"
-}
-
 variable "MYSQL_DATABASE" {
   default = "fastfood"
 }
