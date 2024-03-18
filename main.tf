@@ -30,7 +30,7 @@ resource "google_cloud_run_v2_service" "fiap-postech" {
   template {
 
     containers {
-      image = "southamerica-east1-docker.pkg.dev/lateral-scion-414400/fiap/fiap-pos-tech:latest"
+      image = "southamerica-east1-docker.pkg.dev/lateral-scion-414400/fiap/fiap-pos-tech:71f403d93026dbbdc5993a5a8b0d2a6b51cf4435"
 
       env {
         name  = "DATABASE_URL"
