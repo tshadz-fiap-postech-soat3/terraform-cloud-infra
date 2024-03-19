@@ -1,8 +1,13 @@
+locals {
+  tf_cloud_organization = var.TF_CLOUD_ORGANIZATION
+  tf_workspace = var.TF_WORKSPACE
+}
+
 terraform {
   cloud {
-    organization = var.TF_CLOUD_ORGANIZATION
+    organization = local.tf_cloud_organization
     workspaces {
-      name = var.TF_WORKSPACE
+      name = local.tf_workspace
     }
   }
 }
@@ -27,9 +32,9 @@ data "terraform_remote_state" "fiap-database" {
   backend = "remote"
 
   config = {
-    organization = var.TF_CLOUD_ORGANIZATION
+    organization = local.tf_cloud_organization
     workspaces = {
-      name = var.TF_WORKSPACE
+      name = local.tf_workspace
     }
   }
 }
