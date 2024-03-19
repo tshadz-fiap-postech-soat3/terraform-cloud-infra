@@ -5,15 +5,17 @@ on:
     branches: [ "main" ]
 
 env:
-  TF_CLOUD_ORGANIZATION: "${{ secrets.TF_CLOUD_ORGANIZATION }}"
-  TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
+  TF_VAR_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
   CONFIG_DIRECTORY: "./"
   TF_VAR_CLOUD_REGION: "${{secrets.CLOUD_REGION}}"
   TF_VAR_MYSQL_USER: "${{secrets.MYSQL_USER}}"
   TF_VAR_MYSQL_PASSWORD: "${{secrets.MYSQL_PASSWORD}}"
   TF_VAR_MYSQL_DATABASE: "${{secrets.MYSQL_DATABASE}}"
   TF_VAR_CLOUD_INSTANCE: "${{secrets.CLOUD_INSTANCE}}"
-  TF_VAR_CREDENTIALS: "${{secrets.CREDENTIALS}}"
+  TF_VAR_DB_TIER: "${{secrets.DB_TIER}}"
+  TF_VAR_DB_REGION: "${{secrets.DB_REGION}}"
+  TF_VAR_CREDENTIALS: "${{secrets.GCP_CREDENTIALS}}"
+  TF_VAR_GCP_ID: "${{secrets.GCP_ID}}"
 
 jobs:
   terraform:
