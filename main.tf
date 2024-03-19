@@ -29,7 +29,7 @@ data "terraform_remote_state" "fiap-database" {
   config = {
     organization = "fiap-postech-tsombra"
     workspaces = {
-      name = "fiap-cloud-infra-tf"
+      name = "fiap-cloud-infra"
     }
   }
 }
