@@ -10,14 +10,6 @@ variable "GCP_ID" {
   description = "Project ID"
 }
 
-variable "MYSQL_HOST" {
-  description = "DB Host"
-}
-
-variable "MYSQL_ROOT_PASSWORD" {
-  description = "DB Password"
-}
-
 variable "MYSQL_DATABASE" {
   default = "fastfood"
 }
@@ -28,10 +20,6 @@ variable "MYSQL_USER" {
 
 variable "MYSQL_PASSWORD" {
   description = "DB Password"
-}
-
-variable "MYSQL_PORT" {
-  description = "DB Port"
 }
 
 variable "CLOUD_INSTANCE" {
@@ -50,12 +38,4 @@ variable "REGION" {
 variable "ZONE" {
   description = "The zone for the resources"
   default     = "us-central1-a"
-}
-
-variable "TF_WORKSPACE" {
-
-}
-
-variable "TF_CLOUD_ORGANIZATION" {
-
 }
