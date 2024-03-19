@@ -61,7 +61,7 @@ resource "google_cloud_run_v2_service" "fiap-postech" {
     volumes {
       name = "cloudsql"
       cloud_sql_instance {
-        instances = var.CLOUD_INSTANCE
+        instances = [var.CLOUD_INSTANCE]
       }
     }
   }
