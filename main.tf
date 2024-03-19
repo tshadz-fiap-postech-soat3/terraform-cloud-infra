@@ -23,16 +23,16 @@ provider "google" {
   credentials = var.CREDENTIALS
 }
 
-data "terraform_remote_state" "fiap-database" {
-  backend = "remote"
+# data "terraform_remote_state" "fiap-database" {
+#   backend = "remote"
 
-  config = {
-    organization = "fiap-postech-tsombra"
-    workspaces = {
-      name = "fiap-cloud-infra"
-    }
-  }
-}
+#   config = {
+#     organization = "fiap-postech-tsombra"
+#     workspaces = {
+#       name = "fiap-cloud-infra"
+#     }
+#   }
+# }
 
 resource "google_cloud_run_v2_service" "fiap-postech" {
   name     = "fiap-pos-tech"
