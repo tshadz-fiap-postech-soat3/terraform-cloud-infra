@@ -23,17 +23,6 @@ provider "google" {
   credentials = var.CREDENTIALS
 }
 
-# data "terraform_remote_state" "fiap-database" {
-#   backend = "remote"
-
-#   config = {
-#     organization = "fiap-postech-tsombra"
-#     workspaces = {
-#       name = "fiap-cloud-infra"
-#     }
-#   }
-# }
-
 resource "google_cloud_run_v2_service" "fiap-postech" {
   name     = "fiap-pos-tech"
   location = var.REGION
@@ -42,11 +31,22 @@ resource "google_cloud_run_v2_service" "fiap-postech" {
 
     containers {
       image = "southamerica-east1-docker.pkg.dev/lateral-scion-414400/fiap/fiap-pos-tech:71f403d93026dbbdc5993a5a8b0d2a6b51cf4435"
-
+      volume_mounts {
+        name       = "cloudsql"
+        mount_path = "/cloudsql"
+      }
       env {
         name  = "DATABASE_URL"
         value = "mysql://${var.MYSQL_USER}:${var.MYSQL_PASSWORD}@localhost/${var.MYSQL_DATABASE}?socket=/cloudsql/${var.CLOUD_INSTANCE}"
       }
     }
+    volumes {
+      name = "cloudsql"
+      cloud_sql_instance {
+        instances = var.CLOUD_INSTANCE
+      }
+    }
   }
+  client     = "terraform"
+  depends_on = [google_project_service.secretmanager_api, google_project_service.cloudrun_api, google_project_service.sqladmin_api]
 }
