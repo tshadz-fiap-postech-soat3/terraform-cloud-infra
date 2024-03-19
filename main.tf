@@ -47,7 +47,7 @@ resource "google_cloud_run_v2_service" "fiap-postech" {
   template {
 
     containers {
-      image = "southamerica-east1-docker.pkg.dev/lateral-scion-414400/fiap/fiap-pos-tech:71f403d93026dbbdc5993a5a8b0d2a6b51cf4435"
+      image = "southamerica-east1-docker.pkg.dev/lateral-scion-414400/fiap/fiap-pos-tech:fdb80d323f4bef1859818f8e13dae40a140835c0"
       volume_mounts {
         name       = "cloudsql"
         mount_path = "/cloudsql"
