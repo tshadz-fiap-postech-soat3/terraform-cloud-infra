@@ -1,8 +1,8 @@
 terraform {
   cloud {
-    organization = fiap-postech-tsombra
+    organization = "fiap-postech-tsombra"
     workspaces {
-      name = fiap-cloud-infra-tf
+      name = "fiap-cloud-infra-tf"
     }
   }
 }
@@ -27,9 +27,9 @@ data "terraform_remote_state" "fiap-database" {
   backend = "remote"
 
   config = {
-    organization = fiap-postech-tsombra
+    organization = "fiap-postech-tsombra"
     workspaces = {
-      name = fiap-cloud-infra-tf
+      name = "fiap-cloud-infra-tf"
     }
   }
 }
