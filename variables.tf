@@ -51,3 +51,11 @@ variable "ZONE" {
   description = "The zone for the resources"
   default     = "us-central1-a"
 }
+
+variable "TF_WORKSPACE" {
+  
+}
+
+variable "TF_CLOUD_ORGANIZATION" {
+  
+}

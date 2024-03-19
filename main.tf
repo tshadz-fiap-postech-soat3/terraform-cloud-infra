@@ -1,8 +1,8 @@
 terraform {
   cloud {
-    organization = "fiap-postech-tsombra"
+    organization = var.TF_CLOUD_ORGANIZATION
     workspaces {
-      name = "terraform-cloud-test-infra"
+      name = var.TF_WORKSPACE
     }
   }
 }
@@ -21,6 +21,17 @@ provider "google" {
   region      = var.REGION
   zone        = var.ZONE
   credentials = var.CREDENTIALS
+}
+
+data "terraform_remote_state" "fiap-database" {
+  backend = "remote"
+
+  config = {
+    organization = var.TF_CLOUD_ORGANIZATION
+    workspaces = {
+      name = var.TF_WORKSPACE
+    }
+  }
 }
 
 resource "google_cloud_run_v2_service" "fiap-postech" {
