@@ -2,8 +2,7 @@ name: Terraform Apply
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
 
 env:
   TF_CLOUD_ORGANIZATION: "${{ secrets.TF_CLOUD_ORGANIZATION }}"
