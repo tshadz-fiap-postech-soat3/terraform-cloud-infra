@@ -1,6 +1,6 @@
 locals {
   tf_cloud_organization = var.TF_CLOUD_ORGANIZATION
-  tf_workspace = var.TF_WORKSPACE
+  tf_workspace          = var.TF_WORKSPACE
 }
 
 terraform {
