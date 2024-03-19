@@ -53,9 +53,9 @@ variable "ZONE" {
 }
 
 variable "TF_WORKSPACE" {
-  
+
 }
 
 variable "TF_CLOUD_ORGANIZATION" {
-  
+
 }
