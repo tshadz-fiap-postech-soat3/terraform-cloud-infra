@@ -36,15 +36,14 @@ resource "google_project_service" "cloudrun_api" {
 
 provider "google" {
   project     = var.GCP_ID
-  region      = var.REGION
+  region      = var.CLOUD_REGION
   zone        = var.ZONE
   credentials = var.CREDENTIALS
 }
 
 resource "google_cloud_run_v2_service" "fiap-postech" {
   name     = "fiap-pos-tech"
-  location = var.REGION
-
+  location = var.CLOUD_REGION
   template {
 
     containers {

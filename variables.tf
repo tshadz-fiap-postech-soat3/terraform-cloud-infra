@@ -30,7 +30,7 @@ variable "CREDENTIALS" {
   description = "Cloud Sql Service Credentials"
 }
 
-variable "REGION" {
+variable "CLOUD_REGION" {
   description = "The region for the resources"
   default     = "us-central1"
 }
