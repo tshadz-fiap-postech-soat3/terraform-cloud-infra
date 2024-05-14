@@ -19,7 +19,7 @@ env:
   TF_VAR_DB_REGION: "${{secrets.DB_REGION}}"
   TF_VAR_CREDENTIALS: "${{secrets.GCP_CREDENTIALS}}"
   TF_VAR_GCP_ID: "${{secrets.GCP_ID}}"
-  TF_VAR_NAME: "${{secrets.IMAGE_NAME}}"
+  TF_VAR_IMAGE: "${{secrets.IMAGE_NAME}}"
   TF_VAR_TAG: "${{github.sha}}"
 
 jobs:
