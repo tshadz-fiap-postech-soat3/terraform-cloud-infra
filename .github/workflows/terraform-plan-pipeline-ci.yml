@@ -49,9 +49,8 @@ jobs:
         working-directory: ./terraform
 
       - name: Set Terraform Workspace
-        run: |
-          export ENVIRONMENT="production"  # Defina a variável de ambiente conforme necessário
-          ./set_workspace.sh
+        working-directory: ./terraform
+        run: ./set_workspace.sh
 
       - name: Terraform Init
         id: init
