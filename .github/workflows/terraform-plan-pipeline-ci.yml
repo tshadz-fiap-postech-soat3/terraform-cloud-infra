@@ -1,8 +1,7 @@
 name: Terraform Plan
 
 on:
-  pull_request:
-    branches: [ "main" ]
+  workflow_call:
 
 env:
   TF_VAR_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
