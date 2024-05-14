@@ -34,6 +34,7 @@ jobs:
         with:
           repository: tshadz-fiap-postech-soat3/terraform-cloud-infra  # Substitua <owner>/<terraform-repo> pelo proprietário e nome do repositório Terraform
           path: terraform
+          ref: dev-fiap-001
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
