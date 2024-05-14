@@ -48,6 +48,6 @@ variable "TAG" {
   description = "Image Tag"
 }
 
-variable "TF_WORKSPACE" {
+variable "WORKSPACE" {
   description = "TF Workspace"
 }
