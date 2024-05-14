@@ -2,7 +2,7 @@ terraform {
   cloud {
     organization = "fiap-postech-tsombra"
     workspaces {
-      name = "fiap-cloud-infra-tf"
+      name = var.TF_WORKSPACE
     }
   }
 }
