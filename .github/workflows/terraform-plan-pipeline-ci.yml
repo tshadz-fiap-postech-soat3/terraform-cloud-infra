@@ -50,7 +50,9 @@ jobs:
 
       - name: Set Terraform Workspace
         working-directory: ./terraform
-        run: ./set_workspace.sh
+        run: |
+          chmod +x set_workspace.sh
+          ./set_workspace.sh
 
       - name: Terraform Init
         id: init
