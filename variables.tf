@@ -39,3 +39,15 @@ variable "ZONE" {
   description = "The zone for the resources"
   default     = "us-central1-a"
 }
+
+variable "IMAGE" {
+  description = "Image Name"
+}
+
+variable "TAG" {
+  description = "Image Tag"
+}
+
+variable "WORKSPACE" {
+  description = "TF Workspace"
+}

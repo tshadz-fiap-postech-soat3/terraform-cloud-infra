@@ -2,7 +2,7 @@ terraform {
   cloud {
     organization = "fiap-postech-tsombra"
     workspaces {
-      name = "fiap-cloud-infra-tf"
+      name = "workspace"
     }
   }
 }
@@ -42,12 +42,12 @@ provider "google" {
 }
 
 resource "google_cloud_run_v2_service" "fiap-postech" {
-  name     = "fiap-pos-tech"
+  name     = var.IMAGE
   location = var.CLOUD_REGION
   template {
 
     containers {
-      image = "southamerica-east1-docker.pkg.dev/lateral-scion-414400/fiap/fiap-pos-tech:fdb80d323f4bef1859818f8e13dae40a140835c0"
+      image = "southamerica-east1-docker.pkg.dev/lateral-scion-414400/fiap/${var.IMAGE}:${var.TAG}"
       volume_mounts {
         name       = "cloudsql"
         mount_path = "/cloudsql"
