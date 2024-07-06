@@ -8,6 +8,7 @@ variable "DB_TIER" {
 
 variable "GCP_ID" {
   description = "Project ID"
+  default = "fiap-pos-tech-428300"
 }
 
 variable "MYSQL_DATABASE" {
