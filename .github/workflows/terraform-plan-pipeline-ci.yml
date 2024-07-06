@@ -5,7 +5,7 @@ on:
 
 env:
   TF_VAR_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
-  TF_VAR_WORKSPACE: "${{secrets.TF_WORKSPACE}}"
+  TF_VAR_WORKSPACE: "${{secrets.IMAGE_NAME}}"
   CONFIG_DIRECTORY: "./"
   TF_VAR_CLOUD_REGION: "${{secrets.CLOUD_REGION}}"
   TF_VAR_MYSQL_USER: "${{secrets.MYSQL_USER}}"

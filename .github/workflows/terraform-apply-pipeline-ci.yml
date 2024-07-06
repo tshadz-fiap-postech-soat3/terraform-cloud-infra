@@ -5,7 +5,7 @@ on:
 
 env:
   TF_VAR_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
-  TF_VAR_WORKSPACE: "${{secrets.TF_WORKSPACE}}"
+  TF_VAR_WORKSPACE: "${{secrets.IMAGE_NAME}}"
   CONFIG_DIRECTORY: "./"
   TF_VAR_CLOUD_REGION: "${{secrets.CLOUD_REGION}}"
   TF_VAR_MYSQL_USER: "${{secrets.MYSQL_USER}}"
@@ -16,7 +16,7 @@ env:
   TF_VAR_DB_REGION: "${{secrets.DB_REGION}}"
   TF_VAR_CREDENTIALS: "${{secrets.GCP_CREDENTIALS}}"
   TF_VAR_GCP_ID: "${{secrets.GCP_ID}}"
-  TF_VAR_IMAGE: "${{secrets.IMAGE_NAME}}"
+  TF_VAR_IMAGE_NAME: "${{secrets.IMAGE_NAME}}"
   TF_VAR_TAG: "${{github.sha}}"
 
 jobs:
