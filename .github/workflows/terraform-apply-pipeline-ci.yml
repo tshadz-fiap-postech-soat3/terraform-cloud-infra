@@ -2,10 +2,6 @@ name: Terraform Apply
 
 on:
   workflow_call:
-    inputs:
-      trigger_workflow:
-        required: true
-        type: boolean
 
 env:
   TF_VAR_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
