@@ -47,14 +47,14 @@ resource "google_cloud_run_v2_service" "fiap-postech" {
   template {
 
     containers {
-      image = "southamerica-east1-docker.pkg.dev/fiap-pos-tech-428300/fiap/${var.IMAGE}:${var.TAG}"
+      image = "${var.CLOUD_REGION}-docker.pkg.dev/${var.GCP_ID}/fiap/${var.IMAGE}:${var.TAG}"
       volume_mounts {
         name       = "cloudsql"
         mount_path = "/cloudsql"
       }
       env {
         name  = "DATABASE_URL"
-        value = "mysql://${var.MYSQL_USER}:${var.MYSQL_PASSWORD}@localhost/${var.MYSQL_DATABASE}?socket=/cloudsql/${var.CLOUD_INSTANCE}"
+        value = "mysql://${var.MYSQL_USER}:${var.MYSQL_PASSWORD}@localhost/${var.MYSQL_DATABASE}?socket=/cloudsql/${var.GCP_ID}:${var.CLOUD_REGION}:product-api"
       }
     }
     volumes {
