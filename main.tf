@@ -42,19 +42,19 @@ provider "google" {
 }
 
 resource "google_cloud_run_v2_service" "fiap-postech" {
-  name     = var.IMAGE
+  name     = var.IMAGE_NAME
   location = var.CLOUD_REGION
   template {
 
     containers {
-      image = "${var.CLOUD_REGION}-docker.pkg.dev/${var.GCP_ID}/fiap/${var.IMAGE}:${var.TAG}"
+      image = "${var.CLOUD_REGION}-docker.pkg.dev/${var.GCP_ID}/fiap/${var.IMAGE_NAME}:${var.TAG}"
       volume_mounts {
         name       = "cloudsql"
         mount_path = "/cloudsql"
       }
       env {
         name  = "DATABASE_URL"
-        value = "mysql://${var.MYSQL_USER}:${var.MYSQL_PASSWORD}@localhost/${var.MYSQL_DATABASE}?socket=/cloudsql/${var.GCP_ID}:${var.CLOUD_REGION}:product-api"
+        value = "mysql://${var.MYSQL_USER}:${var.MYSQL_PASSWORD}@localhost/${var.MYSQL_DATABASE}?socket=/cloudsql/${var.GCP_ID}:${var.CLOUD_REGION}:${var.IMAGE_NAME}-database"
       }
     }
     volumes {
