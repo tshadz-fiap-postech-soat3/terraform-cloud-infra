@@ -40,7 +40,7 @@ variable "ZONE" {
   default     = "us-central1-a"
 }
 
-variable "IMAGE" {
+variable "IMAGE_NAME" {
   description = "Image Name"
 }
 
