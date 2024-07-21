@@ -16,6 +16,10 @@ terraform {
   }
 }
 
+locals {
+  cloud_sql_instance = "${var.GCP_ID}:${var.CLOUD_REGION}:${var.IMAGE_NAME}-database"
+}
+
 # Enable Secret Manager API
 resource "google_project_service" "secretmanager_api" {
   service            = "secretmanager.googleapis.com"
@@ -60,7 +64,7 @@ resource "google_cloud_run_v2_service" "fiap-postech" {
     volumes {
       name = "cloudsql"
       cloud_sql_instance {
-        instances = [var.CLOUD_INSTANCE]
+        instances = [local.cloud_sql_instance]
       }
     }
   }

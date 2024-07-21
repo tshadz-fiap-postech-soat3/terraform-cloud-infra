@@ -11,7 +11,6 @@ env:
   TF_VAR_MYSQL_USER: "${{secrets.MYSQL_USER}}"
   TF_VAR_MYSQL_PASSWORD: "${{secrets.MYSQL_PASSWORD}}"
   TF_VAR_MYSQL_DATABASE: "${{secrets.MYSQL_DATABASE}}"
-  TF_VAR_CLOUD_INSTANCE: "${{secrets.CLOUD_INSTANCE}}"
   TF_VAR_DB_TIER: "${{secrets.DB_TIER}}"
   TF_VAR_DB_REGION: "${{secrets.DB_REGION}}"
   TF_VAR_CREDENTIALS: "${{secrets.GCP_CREDENTIALS}}"

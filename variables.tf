@@ -23,10 +23,6 @@ variable "MYSQL_PASSWORD" {
   description = "DB Password"
 }
 
-variable "CLOUD_INSTANCE" {
-  description = "DB Instance Name"
-}
-
 variable "CREDENTIALS" {
   description = "Cloud Sql Service Credentials"
 }
